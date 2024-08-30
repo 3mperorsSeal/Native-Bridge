@@ -36,7 +36,7 @@ export function Footer() {
               <div>With Hyperlane</div>
             </div>
           </div>
-          <nav className="flex text-md font-medium">
+          <nav className="flex text-md font-medium pt-5">
             <ul className={`${styles.linkCol} mr-14`}>
               {footerLinks1.map((item) => (
                 <li className="" key={item.title}>

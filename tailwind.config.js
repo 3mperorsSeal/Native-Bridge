@@ -22,7 +22,7 @@ module.exports = {
         gray: {...defaultTheme.colors.gray, 150: '#EBEDF0', 250: '#404040', 350: '#6B6B6B'},
         blue: {
           50: '#E6EDF9',
-          100: '#CDDCF4',
+          100: '#FFFFF',
           200: '#A7C2EC',
           300: '#82A8E4',
           400: '#5385D2',

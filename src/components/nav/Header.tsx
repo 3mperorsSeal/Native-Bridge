@@ -11,7 +11,7 @@ export function Header() {
         <Link href="/" className="py-0 flex items-center">
           <Image src={Logo} width={210} alt="" />
         </Link>
-        <div className="flex flex-col items-end md:flex-row-reverse md:items-start gap-2">
+        <div className="flex flex-col items-end md:flex-row-reverse md:items-start gap-2 pt-1">
           <WalletControlBar />
         </div>
       </div>

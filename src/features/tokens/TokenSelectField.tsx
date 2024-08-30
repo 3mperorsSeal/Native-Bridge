@@ -105,7 +105,7 @@ function TokenButton({
 }
 
 const styles = {
-  base: 'mt-1.5 w-full px-2.5 py-2 flex items-center justify-between text-sm rounded-full border border-[#3b3c4e]  outline-none transition-colors duration-500 bg-black',
-  enabled: 'hover:bg-gray-50 active:bg-gray-100 focus:border-blue-500',
+  base: 'mt-1.5 w-full px-2.5 py-2 flex items-center justify-between text-sm rounded-lg border border-[#3b3c4e]  outline-none transition-colors duration-500 bg-black',
+  enabled: 'hover:bg-black active:bg-gray-100 focus:border-blue-500',
   disabled: 'bg-gray-100 cursor-default',
 };
