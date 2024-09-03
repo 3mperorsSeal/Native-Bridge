@@ -36,7 +36,9 @@ select {
 select:focus {
   outline: none;
 }
-
+input::placeholder {
+  color: #ffff;
+}
 /*
 Text and shadows
 ================
