@@ -25,7 +25,7 @@ const footerLinks3 = [
 export function Footer() {
   return (
     <footer className="text-white relative">
-      <div className="relative z-10 px-8 pb-5 pt-2 sm:pt-0 bg-pink-500">
+      <div className="relative z-10 px-8 pb-5 pt-2 sm:pt-0 bg-orange-500">
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-center justify-between">
           <div className="flex items-center justify-center">
             <div className="ml-2 w-12 sm:w-16 h-12 sm:h-16">

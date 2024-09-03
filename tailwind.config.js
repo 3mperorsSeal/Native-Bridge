@@ -5,11 +5,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      sans: ['Neue Haas Grotesk', 'Helvetica', 'sans-serif'],
-      serif: ['Garamond', 'serif'],
-      mono: ['Courier New', 'monospace'],
-    },
     screens: {
       xs: '480px',
       ...defaultTheme.screens,
@@ -55,7 +50,7 @@ module.exports = {
           800: '#17462E',
           900: '#0F2F1E',
         },
-        pink: {
+        orange: {
           50: '#FAEAF8',
           100: '#F2C1EA',
           200: '#EA98DC',
@@ -84,6 +79,9 @@ module.exports = {
         md: '0.95rem',
         thin: '0.625rem',
       },
+      // fontFamily: {
+      //   body: ['Roboto+Mono']
+      // },
       spacing: {
         88: '22rem',
         100: '26rem',

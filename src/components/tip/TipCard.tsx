@@ -23,7 +23,7 @@ export function TipCard() {
           href={links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-2 px-3 py-1.5 flex items-center bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-xs sm:text-sm text-blue-500 rounded-full transition-all"
+          className="ml-2 px-3 py-1.5 flex items-center bg-gray-100 hover:bg-gray-200 active:bg-gray-300 text-xs sm:text-sm text-blue-500 rounded-lg transition-all"
         >
           <Image src={InfoCircle} width={16} alt="" />
           <span className="ml-1.5">Learn More</span>
@@ -34,7 +34,7 @@ export function TipCard() {
           imgSrc={XCircle}
           onClick={() => setShow(false)}
           title="Hide tip"
-          classes="hover:rotate-90"
+          classes="hover:rotate-90 bg-white p- rounded-full"
         />
       </div>
     </Card>

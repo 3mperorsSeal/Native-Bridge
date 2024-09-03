@@ -1,4 +1,4 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { GasPrice } from '@cosmjs/stargate';
 import { wallets as cosmostationWallets } from '@cosmos-kit/cosmostation';
 import { wallets as keplrWallets } from '@cosmos-kit/keplr';
@@ -11,20 +11,13 @@ import { APP_DESCRIPTION, APP_NAME, APP_URL } from '../../../consts/app';
 import { config } from '../../../consts/config';
 import { getCosmosKitConfig } from '../../chains/metadata';
 
-const theme = extendTheme({
-  fonts: {
-    heading: `'Neue Haas Grotesk', 'Helvetica', 'sans-serif'`,
-    body: `'Neue Haas Grotesk', 'Helvetica', 'sans-serif'`,
-  },
-});
-
 export function CosmosWalletContext({ children }: PropsWithChildren<unknown>) {
   const { chains, assets } = getCosmosKitConfig();
   const leapWithoutSnap = leapWallets.filter((wallet) => !wallet.walletName.includes('snap'));
   // TODO replace Chakra here with a custom modal for ChainProvider
   // Using Chakra + @cosmos-kit/react instead of @cosmos-kit/react-lite adds about 600Kb to the bundle
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <ChainProvider
         chains={chains}
         assetLists={assets}

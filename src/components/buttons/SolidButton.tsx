@@ -2,7 +2,7 @@ import { PropsWithChildren, ReactElement } from 'react';
 
 interface ButtonProps {
   type?: 'submit' | 'reset' | 'button';
-  color?: 'white' | 'blue' | 'green' | 'red' | 'gray' | 'pink' | 'mint' | 'black'; // defaults to blue
+  color?: 'white' | 'blue' | 'green' | 'red' | 'gray' | 'orange' | 'mint' | 'black'; // defaults to blue
   bold?: boolean;
   classes?: string;
   icon?: ReactElement;
@@ -30,10 +30,10 @@ export function SolidButton(
     baseColors = 'bg-blue-500 text-white';
     onHover = 'hover:bg-blue-600';
     onActive = 'active:bg-blue-700';
-  } else if (color === 'pink') {
-    baseColors = 'bg-pink-500 text-white';
-    onHover = 'hover:bg-pink-600 hover:border border-pink-500';
-    onActive = 'active:bg-pink-700';
+  } else if (color === 'orange') {
+    baseColors = 'bg-orange-500 text-black';
+    onHover = 'hover:bg-orange-600 hover:border border-orange-500 hover:text-orange-500';
+    onActive = 'active:bg-orange-700';
   } else if (color === 'green') {
     baseColors = 'bg-green-500 text-white';
     onHover = 'hover:bg-green-600';

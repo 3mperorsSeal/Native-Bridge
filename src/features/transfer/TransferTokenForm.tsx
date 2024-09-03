@@ -1,5 +1,6 @@
 import BigNumber from 'bignumber.js';
 import { Form, Formik, useFormikContext } from 'formik';
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -11,9 +12,9 @@ import { ConnectAwareSubmitButton } from '../../components/buttons/ConnectAwareS
 import { IconButton } from '../../components/buttons/IconButton';
 import { SolidButton } from '../../components/buttons/SolidButton';
 import { ChevronIcon } from '../../components/icons/Chevron';
-import { WideChevron } from '../../components/icons/WideChevron';
 import { TextField } from '../../components/input/TextField';
 import { getIndexForToken, getTokenByIndex, getTokens, getWarpCore } from '../../context/context';
+import Arrow from '../../images/icons/BridgeArrow.png';
 import SwapIcon from '../../images/icons/swap.svg';
 import { Color } from '../../styles/Color';
 import { logger } from '../../utils/logger';
@@ -116,9 +117,7 @@ function ChainSelectSection({ isReview }: { isReview: boolean }) {
       <ChainSelectField name="origin" label="From" chains={chains} disabled={isReview} />
       <div className="flex flex-col items-center">
         <div className="flex mb-6 sm:space-x-1.5">
-          <WideChevron classes="hidden sm:block" />
-          <WideChevron />
-          <WideChevron />
+          <Image src={Arrow} width={50} height={50} alt="" className="" />
         </div>
         <SwapChainsButton disabled={isReview} />
       </div>
@@ -260,7 +259,7 @@ function ButtonSection({
       </SolidButton>
       <SolidButton
         type="button"
-        color="pink"
+        color="orange"
         onClick={triggerTransactionsHandler}
         classes="flex-1 px-3 py-1.5"
       >

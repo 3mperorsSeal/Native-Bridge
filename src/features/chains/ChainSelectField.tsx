@@ -38,7 +38,7 @@ export function ChainSelectField({ name, label, chains, onChange, disabled }: Pr
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center justify-center rounded-full bg-gray-100 h-[5.5rem] w-[5.5rem] p-1.5 mb-5">
+      <div className="flex flex-col items-center justify-center rounded-lg bg-gray-100 h-[5.5rem] w-[5.5rem] p-1.5 mb-5">
         <div className="flex items-end h-11">
           <ChainLogo chainName={field.value} size={34} />
         </div>
