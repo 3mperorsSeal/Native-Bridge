@@ -107,8 +107,8 @@ export function TokenList({
       {tokens.length ? (
         tokens.map((t, i) => (
           <button
-            className={`-mx-2 py-2 px-2 rounded mb-2 flex items-center ${
-              t.disabled ? 'opacity-50' : 'hover:bg-gray-200'
+            className={`-mx-2 py-2 px-2 rounded mb-2 flex items-center text-white ${
+              t.disabled ? 'opacity-50' : ''
             } transition-all duration-250`}
             key={i}
             type="button"
