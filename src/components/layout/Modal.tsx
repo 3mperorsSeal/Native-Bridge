@@ -49,11 +49,11 @@ export function Modal({
               <Dialog.Panel
                 className={`w-full ${
                   width || 'max-w-xs'
-                } max-h-[90vh] transform overflow-auto rounded-2xl bg-white ${
+                } max-h-[90vh] transform overflow-auto rounded-2xl bg-black scroll-section border border-[#3b3c4e] ${
                   padding || 'px-4 py-4'
                 } text-left shadow-lg transition-all`}
               >
-                <Dialog.Title as="h3" className="text text-gray-700">
+                <Dialog.Title as="h3" className="text text-white">
                   {title}
                 </Dialog.Title>
                 {children}
@@ -63,7 +63,7 @@ export function Modal({
                       imgSrc={XCircle}
                       onClick={close}
                       title="Close"
-                      classes="hover:rotate-90"
+                      classes="hover:rotate-90 bg-white rounded-full"
                     />
                   </div>
                 )}

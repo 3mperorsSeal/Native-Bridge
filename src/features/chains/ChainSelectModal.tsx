@@ -27,11 +27,11 @@ export function ChainSelectListModal({
         {chains.map((c) => (
           <button
             key={c}
-            className="py-1.5 px-2 text-sm flex items-center rounded hover:bg-gray-100 active:bg-gray-200 transition-all duration-200"
+            className="py-1.5 px-2 text-sm flex items-center rounded active:bg-gray-200 transition-all duration-200 img-color"
             onClick={onSelectChain(c)}
           >
             <ChainLogo chainName={c} size={16} background={false} />
-            <span className="ml-2">{getChainDisplayName(c, true)}</span>
+            <span className="ml-2 text-white">{getChainDisplayName(c, true)}</span>
           </button>
         ))}
       </div>

@@ -102,7 +102,7 @@ function SwapChainsButton({ disabled }: { disabled?: boolean }) {
       width={22}
       height={22}
       title="Swap chains"
-      classes={!disabled ? 'hover:rotate-180' : undefined}
+      classes={!disabled ? 'hover:rotate-180 bg-white rounded-full' : undefined}
       onClick={onClick}
       disabled={disabled}
     />

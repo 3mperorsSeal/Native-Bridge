@@ -1,9 +1,17 @@
+// Ensure that roboto_mono is properly imported from wherever it's defined
+import { Roboto_Mono } from 'next/font/google';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
 import { APP_NAME } from '../../consts/app';
 import { Footer } from '../nav/Footer';
 import { Header } from '../nav/Header';
+
+export const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+});
+// Update this path as needed
 
 export function AppLayout({ children }: PropsWithChildren) {
   return (
@@ -17,11 +25,19 @@ export function AppLayout({ children }: PropsWithChildren) {
         id="app-content"
         className="relative flex flex-col justify-between h-full min-h-screen w-full min-w-screen bg-blue-500"
       >
-        <Header />
+        <header>
+          <Header />
+        </header>
         <div className="sm:px-4 mx-auto grow flex items-center max-w-screen-xl mb-10">
-          <main className="w-full flex-1 my-4 flex items-center justify-center">{children}</main>
+          <main
+            className={`w-full flex-1 my-4 flex items-center justify-center ${roboto_mono.className}`}
+          >
+            {children}
+          </main>
         </div>
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );

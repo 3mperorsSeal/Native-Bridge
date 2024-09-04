@@ -11,10 +11,6 @@ body {
   margin: 0;
 }
 
-* {
-  font-family: 'Roboto Mono', monospace;
-}
-
 a {
   outline: none;
   color: inherit;
@@ -31,6 +27,13 @@ select {
   background-position: 92% 60%;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+.img-color img {
+  background-color: white;
+  border-radius: 50%;
+}
+.scroll-section::-webkit-scrollbar {
+  display: none;
 }
 
 select:focus {
