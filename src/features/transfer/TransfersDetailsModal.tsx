@@ -117,7 +117,7 @@ export function TransfersDetailsModal({
     >
       {isFinal && (
         <div className="flex justify-between">
-          <h2 className="text-gray-600 font-medium">{date}</h2>
+          <h2 className="text-white font-medium">{date}</h2>
           <div className="flex items-center font-medium">
             {isSent ? (
               <h3 className="text-blue-500">Sent</h3>
@@ -163,7 +163,7 @@ export function TransfersDetailsModal({
       </div>
 
       {isFinal ? (
-        <div className="mt-5 flex flex-col space-y-4">
+        <div className="mt-5 flex flex-col space-y-4 text-white">
           <TransferProperty name="Sender Address" value={sender} url={fromUrl} />
           <TransferProperty name="Recipient Address" value={recipient} url={toUrl} />
           {token?.addressOrDenom && (
@@ -197,13 +197,13 @@ export function TransfersDetailsModal({
           <Spinner />
           <div
             className={`mt-5 text-sm text-center ${
-              status === TransferStatus.Failed ? 'text-red-600' : 'text-gray-600'
+              status === TransferStatus.Failed ? 'text-red-600' : 'text-white'
             }`}
           >
             {statusDescription}
           </div>
           {showSignWarning && (
-            <div className="mt-3 text-sm text-center text-gray-600">
+            <div className="mt-3 text-sm text-center text-white">
               If your wallet does not show a transaction request, please try the transfer again.
             </div>
           )}
@@ -245,7 +245,7 @@ function TransferProperty({ name, value, url }: { name: string; value: string; u
   return (
     <div>
       <div className="flex justify-between items-center">
-        <label className="text-gray-350 text-sm leading-normal tracking-wider">{name}</label>
+        <label className="text-white text-sm leading-normal tracking-wider">{name}</label>
         <div className="flex items-center space-x-2">
           {url && (
             <a href={url} target="_blank" rel="noopener noreferrer">

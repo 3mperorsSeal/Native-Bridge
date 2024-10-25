@@ -8,14 +8,7 @@ function _SmallSpinner({ className }: { className?: string }) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <circle
-        className="opacity-25"
-        stroke="currentColor"
-        strokeWidth="4"
-        cx="12"
-        cy="12"
-        r="10"
-      ></circle>
+      <circle className="opacity-25" stroke="white" strokeWidth="4" cx="12" cy="12" r="10"></circle>
       <path
         className="opacity-75"
         fill="currentColor"

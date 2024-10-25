@@ -356,7 +356,7 @@ function ReviewDetails({ visible }: { visible: boolean }) {
       } overflow-hidden transition-all`}
     >
       <label className="mt-4 block uppercase text-sm text-white pl-0.5">Transactions</label>
-      <div className="mt-1.5 px-2.5 py-2 space-y-2 rounded border border-gray-400 bg-gray-150 text-sm break-all">
+      <div className="mt-1.5 px-2.5 py-2 space-y-2 rounded border border-gray-400 text-sm break-all">
         {isLoading ? (
           <div className="py-6 flex items-center justify-center">
             <SmallSpinner />
@@ -365,8 +365,8 @@ function ReviewDetails({ visible }: { visible: boolean }) {
           <>
             {isApproveRequired && (
               <div>
-                <h4>Transaction 1: Approve Transfer</h4>
-                <div className="mt-1.5 ml-1.5 pl-2 border-l border-gray-300 space-y-1.5 text-xs">
+                <h4 className="text-white">Transaction 1: Approve Transfer</h4>
+                <div className="mt-1.5 ml-1.5 pl-2 border-l border-gray-300 space-y-1.5 text-xs text-white">
                   <p>{`Router Address: ${originToken?.addressOrDenom}`}</p>
                   {originToken?.collateralAddressOrDenom && (
                     <p>{`Collateral Address: ${originToken.collateralAddressOrDenom}`}</p>
@@ -374,7 +374,7 @@ function ReviewDetails({ visible }: { visible: boolean }) {
                 </div>
               </div>
             )}
-            <div>
+            <div className="text-white">
               <h4>{`Transaction${isApproveRequired ? ' 2' : ''}: Transfer Remote`}</h4>
               <div className="mt-1.5 ml-1.5 pl-2 border-l border-gray-300 space-y-1.5 text-xs">
                 {destinationToken?.addressOrDenom && (

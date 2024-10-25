@@ -46,12 +46,16 @@ export function WalletControlBar() {
         )}
 
         {numReady === 1 && (
-          <SolidButton onClick={() => setIsSideBarOpen(true)} classes="px-2.5 py-1" color="white">
+          <SolidButton
+            onClick={() => setIsSideBarOpen(true)}
+            classes="px-2.5 py-1 border border-white"
+            color="black"
+          >
             <div className="flex items-center justify-center">
               <WalletLogo walletDetails={firstWallet} size={26} />
               <div className="flex flex-col mx-3 items-start">
-                <div className="text-xs text-gray-500">{firstWallet.name || 'Wallet'}</div>
-                <div className="text-xs">
+                <div className="text-xs text-white">{firstWallet.name || 'Wallet'}</div>
+                <div className="text-xs text-white">
                   {readyAccounts[0].addresses.length
                     ? shortenAddress(readyAccounts[0].addresses[0].address, true)
                     : 'Unknown'}
