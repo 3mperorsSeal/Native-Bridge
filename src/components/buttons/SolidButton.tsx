@@ -24,7 +24,8 @@ export function SolidButton(
   } = props;
   const color = _color ?? 'blue';
 
-  const base = 'flex items-center justify-center rounded-lg transition-all duration-500';
+  const base =
+    'flex items-center justify-center rounded-lg transition-all border border-orange-500 duration-500';
   let baseColors, onHover, onActive;
   if (color === 'blue') {
     baseColors = 'bg-blue-500 text-white';
