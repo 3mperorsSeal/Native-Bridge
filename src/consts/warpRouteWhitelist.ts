@@ -7,4 +7,5 @@ export const warpRouteWhitelist: Array<string> | null = null;
 [
   // 'ETH/ethereum-viction'
   'HOA/base-pulsechain',
+  'COCK/base-mode-pulsechain-sei',
 ];
