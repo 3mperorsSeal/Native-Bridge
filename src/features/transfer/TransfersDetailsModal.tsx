@@ -176,7 +176,13 @@ export function TransfersDetailsModal({
               url={originTxUrl}
             />
           )}
-          {msgId && <TransferProperty name="Message ID" value={msgId} />}
+          {msgId && (
+            <TransferProperty
+              name="Message ID"
+              value={msgId}
+              url={`https://explorer.hyperlane.xyz/message/${msgId}`}
+            />
+          )}
           {explorerLink && (
             <div className="flex justify-between">
               <span className="text-gray-350 text-xs leading-normal tracking-wider">
