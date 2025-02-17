@@ -1,17 +1,21 @@
 /** @type {import('next').NextConfig} */
 
-const { version } = require('./package.json')
-const { withSentryConfig } = require("@sentry/nextjs");
+const { version } = require('./package.json');
+const { withSentryConfig } = require('@sentry/nextjs');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-})
+});
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production';
 
 // Sometimes useful to disable this during development
 const ENABLE_CSP_HEADER = true;
-const FRAME_SRC_HOSTS = ['https://*.walletconnect.com', 'https://*.walletconnect.org','https://*.solflare.com'];
-const STYLE_SRC_HOSTS = []
+const FRAME_SRC_HOSTS = [
+  'https://*.walletconnect.com',
+  'https://*.walletconnect.org',
+  'https://*.solflare.com',
+];
+const STYLE_SRC_HOSTS = [];
 const IMG_SRC_HOSTS = ['https://*.walletconnect.com', 'https://*.githubusercontent.com'];
 const cspHeader = `
   default-src 'self';
@@ -24,20 +28,21 @@ const cspHeader = `
   base-uri 'self';
   form-action 'self';
   frame-src 'self' ${FRAME_SRC_HOSTS.join(' ')};
-  frame-ancestors 'none';
   ${!isDev ? 'block-all-mixed-content;' : ''}
   ${!isDev ? 'upgrade-insecure-requests;' : ''}
-`.replace(/\s{2,}/g, ' ').trim();
+`
+  .replace(/\s{2,}/g, ' ')
+  .trim();
 
 const securityHeaders = [
   {
     key: 'X-XSS-Protection',
     value: '1; mode=block',
   },
-  {
-    key: 'X-Frame-Options',
-    value: 'DENY',
-  },
+  // {
+  //   key: 'X-Frame-Options',
+  //   value: 'SAMEORIGIN', // Allow same-origin iframe embedding (this works if React and Next.js are served from the same domain)
+  // },
   {
     key: 'X-Content-Type-Options',
     value: 'nosniff',
@@ -46,7 +51,6 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin',
   },
-  // Note, causes a problem for firefox: https://github.com/MetaMask/metamask-extension/issues/3133
   ...(ENABLE_CSP_HEADER
     ? [
         {
@@ -54,8 +58,8 @@ const securityHeaders = [
           value: cspHeader,
         },
       ]
-    : [])
-]
+    : []),
+];
 
 const nextConfig = {
   webpack(config) {
@@ -72,7 +76,7 @@ const nextConfig = {
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ]
+    ];
   },
 
   env: {
@@ -84,13 +88,13 @@ const nextConfig = {
 
   sentry: {
     hideSourceMaps: true,
-    tunnelRoute: "/monitoring-tunnel",
+    tunnelRoute: '/monitoring-tunnel',
   },
-}
+};
 
 const sentryWebpackPluginOptions = {
-  org: "hyperlane",
-  project: "warp-ui",
+  org: 'hyperlane',
+  project: 'warp-ui',
   authToken: process.env.SENTRY_AUTH_TOKEN,
   bundleSizeOptimizations: {
     excludeDebugStatements: true,
