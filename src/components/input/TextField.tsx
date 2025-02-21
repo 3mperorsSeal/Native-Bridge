@@ -25,5 +25,4 @@ export function TextInput({ onChange, classes, ...props }: InputProps) {
   );
 }
 
-const defaultInputClasses =
-  'mt-1.5 px-2.5 py-2 text-sm rounded-lg focus:border-blue-500  outline-none transition-all duration-300 border border-[#3b3c4e] bg-black text-white';
+const defaultInputClasses = ' text-sm  outline-none  bg-black text-white';

@@ -1,4 +1,4 @@
-import { RainbowKitProvider, connectorsForWallets, lightTheme } from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, connectorsForWallets, darkTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
@@ -21,7 +21,6 @@ import { ProtocolType } from '@hyperlane-xyz/utils';
 import { APP_NAME } from '../../../consts/app';
 import { config } from '../../../consts/config';
 import { getWarpCore } from '../../../context/context';
-import { Color } from '../../../styles/Color';
 import { getWagmiChainConfig } from '../../chains/metadata';
 import { tryGetChainMetadata } from '../../chains/utils';
 
@@ -78,15 +77,7 @@ export function EvmWalletContext({ children }: PropsWithChildren<unknown>) {
 
   return (
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        chains={chains}
-        theme={lightTheme({
-          accentColor: Color.primaryBlue,
-          borderRadius: 'small',
-          fontStack: 'system',
-        })}
-        initialChain={initialChain}
-      >
+      <RainbowKitProvider chains={chains} theme={darkTheme()} initialChain={initialChain}>
         {children}
       </RainbowKitProvider>
     </WagmiConfig>

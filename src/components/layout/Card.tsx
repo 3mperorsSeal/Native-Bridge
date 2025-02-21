@@ -7,7 +7,7 @@ interface Props {
 export function Card({ className, children }: PropsWithChildren<Props>) {
   return (
     <div
-      className={`p-1.5 sm:p-3 md:p-3.5 pb-3.5 md:pb-4 relative bg-black border border-white rounded-3xl overflow-auto ${className}`}
+      className={`py-10  lg:px-10 md:px-8 px-4 md:mt-0 mt-4 relative bg-black border border-white rounded-3xl overflow-auto ${className}`}
     >
       {children}
     </div>

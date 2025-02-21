@@ -4,8 +4,9 @@ import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
 import { APP_NAME } from '../../consts/app';
-import { Footer } from '../nav/Footer';
-import { Header } from '../nav/Header';
+import { TransferTokenCard } from '../../features/transfer/TransferTokenCard';
+import { TransferHistory } from '../../features/wallet/TransferHistory';
+import { WalletControlBar } from '../../features/wallet/WalletControlBar';
 
 export const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
@@ -21,23 +22,23 @@ export function AppLayout({ children }: PropsWithChildren) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{APP_NAME}</title>
       </Head>
-      <div
-        id="app-content"
-        className="relative flex flex-col justify-between h-full min-h-screen w-full min-w-screen bg-blue-500"
-      >
-        <header>
-          <Header />
-        </header>
-        <div className="sm:px-4 mx-auto grow flex items-center max-w-screen-xl mb-10">
-          <main
-            className={`w-full flex-1 my-4 flex items-center justify-center ${roboto_mono.className}`}
-          >
-            {children}
-          </main>
+      <div className="bg-[#121214] py-3 relative">
+        <div className="md:max-w-[1100px] mx-auto w-full px-4 flex justify-center xl:gap-4 gap-4 items-start 2xl:pt-10 py-2 md:flex-nowrap flex-wrap">
+          <div className="md:max-w-[620px] w-full">
+            <div className="md:hidden block">
+              <WalletControlBar />
+            </div>
+            <TransferTokenCard />
+          </div>
+          <div className="md:max-w-[474px] w-full">
+            <div className="md:block hidden">
+              <WalletControlBar />
+            </div>
+            <div className="mt-3">
+              <TransferHistory />
+            </div>
+          </div>
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

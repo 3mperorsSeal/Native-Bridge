@@ -8,9 +8,9 @@ import { Spinner } from '../../components/animation/Spinner';
 import { CopyButton } from '../../components/buttons/CopyButton';
 import { ChainLogo } from '../../components/icons/ChainLogo';
 import { TokenIcon } from '../../components/icons/TokenIcon';
-import { WideChevron } from '../../components/icons/WideChevron';
 import { Modal } from '../../components/layout/Modal';
 import { getMultiProvider, getWarpCore } from '../../context/context';
+import ArrowIcon from '../../images/icons/arrow-2.svg';
 import LinkIcon from '../../images/icons/external-link-icon.svg';
 import { formatTimestamp } from '../../utils/date';
 import { getHypExplorerLink } from '../../utils/links';
@@ -151,8 +151,7 @@ export function TransfersDetailsModal({
           </span>
         </div>
         <div className="flex mb-6 sm:space-x-1.5">
-          <WideChevron />
-          <WideChevron />
+          <Image src={ArrowIcon} width={25} height={25} alt="" />
         </div>
         <div className="mr-2 flex flex-col items-center">
           <ChainLogo chainName={destination} size={64} background={true} />

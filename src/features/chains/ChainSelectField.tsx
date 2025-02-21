@@ -37,14 +37,11 @@ export function ChainSelectField({ name, label, chains, onChange, disabled }: Pr
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex flex-col items-center justify-center rounded-lg bg-black h-[5.5rem] w-[5.5rem] p-1.5 mb-5 border border-[#3b3c4e]">
-        <div className="flex items-end h-11 img-color">
-          <ChainLogo chainName={field.value} size={34} />
+    <div className="flex flex-col">
+      <div className="flex flex-col ">
+        <div className="mb-3">
+          <span className="text-gray-400 text-base font-normal roboto leading-normal">{label}</span>
         </div>
-        <label htmlFor={name} className="mt-2 mb-1 text-sm text-white uppercase">
-          {label}
-        </label>
       </div>
       <button
         type="button"
@@ -53,8 +50,10 @@ export function ChainSelectField({ name, label, chains, onChange, disabled }: Pr
         onClick={onClick}
       >
         <div className="flex items-center img-color">
-          <ChainLogo chainName={field.value} size={14} />
-          <span className="ml-2">{getChainDisplayName(field.value, true)}</span>
+          <div className="items-center cursor-pointer bg-[#191919] px-2 py-1 rounded-lg">
+            <ChainLogo chainName={field.value} size={20} />
+          </div>
+          <span className="ml-2 text-base leading-7">{getChainDisplayName(field.value, true)}</span>
         </div>
         <Image src={ChevronIcon} width={12} height={8} alt="" />
       </button>
@@ -69,7 +68,7 @@ export function ChainSelectField({ name, label, chains, onChange, disabled }: Pr
 }
 
 const styles = {
-  base: 'w-36 px-2.5 py-2 relative -top-1.5 flex items-center justify-between text-sm bg-transparent rounded-lg border border-[#3b3c4e] outline-none transition-colors duration-500 text-white',
+  base: 'w-full px-2.5 py-2 relative -top-1.5 flex items-center justify-between text-sm bg-transparent rounded-lg border border-[#3b3c4e] outline-none transition-colors duration-500 text-white',
   enabled: ' active:bg-gray-100 focus:border-blue-500',
   disabled: 'bg-gray-150 cursor-default',
 };

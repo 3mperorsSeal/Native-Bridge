@@ -88,24 +88,24 @@ function TokenButton({
   isAutomatic?: boolean;
 }) {
   return (
-    <button
-      type="button"
-      className={`${styles.base} ${disabled ? styles.disabled : styles.enabled}`}
-      onClick={onClick}
-    >
-      <div className="flex items-center">
-        {token && <TokenIcon token={token} size={20} />}
-        <span className={`ml-2 ${!token?.symbol && 'text-white'}`}>
-          {token?.symbol || (isAutomatic ? 'No routes available' : 'Select Token')}
-        </span>
+    <div className={`${styles.base} ${disabled ? styles.disabled : styles.enabled}`}>
+      <div className="flex items-center justify-between cursor-pointer" onClick={onClick}>
+        <button type="button">
+          <div className="flex items-center">
+            {token && <TokenIcon token={token} size={20} />}
+            <span className={`ml-2 ${!token?.symbol && 'text-white'}`}>
+              {token?.symbol || (isAutomatic ? 'No routes available' : 'Select Token')}
+            </span>
+          </div>
+        </button>
+        <div>{!isAutomatic && <Image src={ChevronIcon} width={12} height={8} alt="" />}</div>
       </div>
-      {!isAutomatic && <Image src={ChevronIcon} width={12} height={8} alt="" />}
-    </button>
+    </div>
   );
 }
 
 const styles = {
-  base: 'mt-1.5 w-full px-2.5 py-2 flex items-center justify-between text-sm rounded-lg border border-[#3b3c4e]  outline-none transition-colors duration-500 bg-black text-white',
+  base: 'mt-1.5 w-full px-2.5 py-2  text-sm rounded-lg border border-[#3b3c4e]  outline-none transition-colors duration-500 bg-black text-white',
   enabled: 'hover:bg-black  focus:border-blue-500',
   disabled: ' cursor-default',
 };
