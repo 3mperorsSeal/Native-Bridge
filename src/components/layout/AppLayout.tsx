@@ -1,7 +1,6 @@
 // Ensure that roboto_mono is properly imported from wherever it's defined
 import { Roboto_Mono } from 'next/font/google';
 import Head from 'next/head';
-import { PropsWithChildren } from 'react';
 
 import { APP_NAME } from '../../consts/app';
 import { TransferTokenCard } from '../../features/transfer/TransferTokenCard';
@@ -14,7 +13,7 @@ export const roboto_mono = Roboto_Mono({
 });
 // Update this path as needed
 
-export function AppLayout({ children }: PropsWithChildren) {
+export function AppLayout() {
   return (
     <>
       <Head>

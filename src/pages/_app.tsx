@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Analytics } from '@vercel/analytics/react';
-import type { AppProps } from 'next/app';
 import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'src/vendor/inpage-metamask';
@@ -26,7 +25,7 @@ const reactQueryClient = new QueryClient({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App() {
   // Disable app SSR for now as it's not needed and
   // complicates graphql integration
   const isSsr = useIsSsr();
@@ -41,10 +40,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <EvmWalletContext>
             <SolanaWalletContext>
               <CosmosWalletContext>
-                <AppLayout>
-                  <Component {...pageProps} />
+                <AppLayout/>
                   <Analytics />
-                </AppLayout>
                 <ToastContainer
                   transition={Zoom}
                   position={toast.POSITION.BOTTOM_RIGHT}

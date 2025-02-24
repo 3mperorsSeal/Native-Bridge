@@ -81,7 +81,7 @@ function TransferSummary({
   transfer: TransferContext;
   onClick: () => void;
 }) {
-  const { amount, origin, destination, status, timestamp, originTokenAddressOrDenom } = transfer;
+  const { amount, origin, destination, status, originTokenAddressOrDenom } = transfer;
   const token = tryFindToken(origin, originTokenAddressOrDenom);
 
   return (

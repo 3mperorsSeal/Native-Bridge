@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { ProtocolType, shortenAddress } from '@hyperlane-xyz/utils';
+import { shortenAddress } from '@hyperlane-xyz/utils';
 
 import Logo from '../../../public/favicon-32x32.png';
 import { SolidButton } from '../../components/buttons/SolidButton';
@@ -10,7 +10,7 @@ import { useIsSsr } from '../../utils/ssr';
 
 import { SideBarMenu } from './SideBarMenu';
 import { WalletEnvSelectionModal } from './WalletEnvSelectionModal';
-import { useAccounts, useDisconnectFns, useWalletDetails } from './hooks/multiProtocol';
+import { useAccounts, useDisconnectFns } from './hooks/multiProtocol';
 
 export function WalletControlBar() {
   const disconnects = useDisconnectFns();
@@ -21,11 +21,8 @@ export function WalletControlBar() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
   const { readyAccounts } = useAccounts();
-  const walletDetails = useWalletDetails();
 
   const numReady = readyAccounts.length;
-  const firstAccount = readyAccounts[0];
-  const firstWallet = walletDetails[firstAccount?.protocol || ProtocolType.Ethereum];
 
   if (isSsr) {
     // https://github.com/wagmi-dev/wagmi/issues/542#issuecomment-1144178142
