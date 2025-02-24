@@ -26,19 +26,8 @@ tokens:
     decimals: 18
     symbol: COCK
     name: The Rise of Cock
-    addressOrDenom: '0xC450f0887A94D1B2ad4b1b05734bEfe860919A2B'
+    addressOrDenom: "0xC450f0887A94D1B2ad4b1b05734bEfe860919A2B"
     connections:
-      - token: ethereum|mode|0x2fdd76fC5A8F6081E059DF76756E347f6B8278d8
-      - token: ethereum|pulsechain|0x5DD749B87FA2e456482adb231FB9c2b0302A3027
-      - token: ethereum|sei|0x86B1b88B2BBFe49999fA9A415270997ed1Bfd803
-  - chainName: mode
-    standard: EvmHypSynthetic
-    decimals: 18
-    symbol: COCK
-    name: The Rise of Cock
-    addressOrDenom: '0x2fdd76fC5A8F6081E059DF76756E347f6B8278d8'
-    connections:
-      - token: ethereum|base|0xC450f0887A94D1B2ad4b1b05734bEfe860919A2B
       - token: ethereum|pulsechain|0x5DD749B87FA2e456482adb231FB9c2b0302A3027
       - token: ethereum|sei|0x86B1b88B2BBFe49999fA9A415270997ed1Bfd803
   - chainName: pulsechain
@@ -46,25 +35,23 @@ tokens:
     decimals: 18
     symbol: COCK
     name: The Rise of Cock
-    addressOrDenom: '0x5DD749B87FA2e456482adb231FB9c2b0302A3027'
-    collateralAddressOrDenom: '0x40b49a9e5B8E3CC137E9CA57A5F4382D1B3dF6FE'
+    addressOrDenom: "0x5DD749B87FA2e456482adb231FB9c2b0302A3027"
+    collateralAddressOrDenom: "0x40b49a9e5B8E3CC137E9CA57A5F4382D1B3dF6FE"
     connections:
       - token: ethereum|base|0xC450f0887A94D1B2ad4b1b05734bEfe860919A2B
-      - token: ethereum|mode|0x2fdd76fC5A8F6081E059DF76756E347f6B8278d8
       - token: ethereum|sei|0x86B1b88B2BBFe49999fA9A415270997ed1Bfd803
   - chainName: sei
     standard: EvmHypSynthetic
     decimals: 18
     symbol: COCK
     name: The Rise of Cock
-    addressOrDenom: '0x86B1b88B2BBFe49999fA9A415270997ed1Bfd803'
+    addressOrDenom: "0x86B1b88B2BBFe49999fA9A415270997ed1Bfd803"
     connections:
       - token: ethereum|base|0xC450f0887A94D1B2ad4b1b05734bEfe860919A2B
-      - token: ethereum|mode|0x2fdd76fC5A8F6081E059DF76756E347f6B8278d8
-      - token: ethereum|pulsechain|0x5DD749B87FA2e456482adb231FB9c2b0302A3027
+      - token: ethereum|pulsechain|0x5DD749B87FA2e456482adb231FB9c2b0302A3027  
   - chainName: base
     standard: EvmHypSynthetic
-    addressOrDenom: '0xe0c4Aa6A461f5032F3153DC2801dD5fcEf9D469e'
+    addressOrDenom: "0xe0c4Aa6A461f5032F3153DC2801dD5fcEf9D469e"
     decimals: 8
     symbol: HEX
     name: HEX
@@ -75,8 +62,8 @@ tokens:
     decimals: 8
     symbol: HEX
     name: HEX
-    addressOrDenom: '0xe227B51F5D7079fAa07b7621657e3aa5906d2185'
-    collateralAddressOrDenom: '0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39'
+    addressOrDenom: "0xe227B51F5D7079fAa07b7621657e3aa5906d2185"
+    collateralAddressOrDenom: "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39"
     connections:
       - token: ethereum|base|0xe0c4Aa6A461f5032F3153DC2801dD5fcEf9D469e
   - chainName: base
@@ -84,7 +71,7 @@ tokens:
     decimals: 18
     symbol: WPLS
     name: Wrapped Pulse
-    addressOrDenom: '0x050c6C2555c2d54AbA01420FBc02fF0F1d10E8dF'
+    addressOrDenom: "0x050c6C2555c2d54AbA01420FBc02fF0F1d10E8dF"
     connections:
       - token: ethereum|pulsechain|0x688B161745c4eCEc2Ce07DC385cF2B57D9980244
   - chainName: pulsechain
@@ -92,8 +79,8 @@ tokens:
     decimals: 18
     symbol: WPLS
     name: Wrapped Pulse
-    addressOrDenom: '0x688B161745c4eCEc2Ce07DC385cF2B57D9980244'
-    collateralAddressOrDenom: '0xA1077a294dDE1B09bB078844df40758a5D0f9a27'
+    addressOrDenom: "0x688B161745c4eCEc2Ce07DC385cF2B57D9980244"
+    collateralAddressOrDenom: "0xA1077a294dDE1B09bB078844df40758a5D0f9a27"
     connections:
       - token: ethereum|base|0x050c6C2555c2d54AbA01420FBc02fF0F1d10E8dF
   - chainName: base
@@ -101,16 +88,16 @@ tokens:
     decimals: 18
     symbol: PLSX
     name: PulseX
-    addressOrDenom: '0xf283A5df86FbC521CB4F5508db167C6d476a7AB9'
+    addressOrDenom: "0xf283A5df86FbC521CB4F5508db167C6d476a7AB9"
     connections:
       - token: ethereum|pulsechain|0x87353B9AA546F8cf7290DeD2d339C0Ec694d7144
   - chainName: pulsechain
-    addressOrDenom: '0x87353B9AA546F8cf7290DeD2d339C0Ec694d7144'
+    addressOrDenom: "0x87353B9AA546F8cf7290DeD2d339C0Ec694d7144"
     standard: EvmHypCollateral
     decimals: 18
     symbol: PLSX
     name: PulseX
-    collateralAddressOrDenom: '0x95B303987A60C71504D99Aa1b13B4DA07b0790ab'
+    collateralAddressOrDenom: "0x95B303987A60C71504D99Aa1b13B4DA07b0790ab"
     connections:
       - token: ethereum|base|0xf283A5df86FbC521CB4F5508db167C6d476a7AB9
   - chainName: base
@@ -118,7 +105,7 @@ tokens:
     decimals: 18
     symbol: INC
     name: Incentive
-    addressOrDenom: '0x8badd5256A22f3452AFbFEeC3a3CAF3F98173c25'
+    addressOrDenom: "0x8badd5256A22f3452AFbFEeC3a3CAF3F98173c25"
     connections:
       - token: ethereum|pulsechain|0xCC89D8bEdfb39170fA74bcf1D28C9e399b82CCb2
   - chainName: pulsechain
@@ -126,7 +113,8 @@ tokens:
     decimals: 18
     symbol: INC
     name: Incentive
-    addressOrDenom: '0xCC89D8bEdfb39170fA74bcf1D28C9e399b82CCb2'
-    collateralAddressOrDenom: '0x2fa878Ab3F87CC1C9737Fc071108F904c0B0C95d'
+    addressOrDenom: "0xCC89D8bEdfb39170fA74bcf1D28C9e399b82CCb2"
+    collateralAddressOrDenom: "0x2fa878Ab3F87CC1C9737Fc071108F904c0B0C95d"
     connections:
       - token: ethereum|base|0x8badd5256A22f3452AFbFEeC3a3CAF3F98173c25
+ 

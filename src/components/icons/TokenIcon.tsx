@@ -17,8 +17,11 @@ function _TokenIcon({ token, size = 32 }: Props) {
   const title = token?.symbol || '';
   const character = title ? title.charAt(0).toUpperCase() : '';
   const fontSize = Math.floor(size / 2);
-
-  const imageSrc = getImageSrc(token);
+  const fallbackSrc = ""; // Fallback image if no logo found
+  const imageSrc = token?.symbol
+    ? `/tokens/${token.symbol.toUpperCase()}.png` // Assuming filename matches token symbol
+    : fallbackSrc;
+ 
   const bgColorSeed =
     token && !imageSrc ? (Buffer.from(token.addressOrDenom).at(0) || 0) % 5 : undefined;
 
