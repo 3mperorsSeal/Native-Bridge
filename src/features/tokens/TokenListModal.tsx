@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { IToken } from '@hyperlane-xyz/sdk';
 
+import { CopyButton } from '../../components/buttons/CopyButton';
 import { TokenIcon } from '../../components/icons/TokenIcon';
 import { TextInput } from '../../components/input/TextField';
 import { Modal } from '../../components/layout/Modal';
@@ -132,6 +133,10 @@ export function TokenList({
                 <span>{`Chain: ${getChainDisplayName(t.token.chainName)}`}</span>
               </div>
             </div>
+            <div className=" ml-5 justify-center text-xs flex space-x-1">
+              <CopyButton copyValue={t.token.addressOrDenom} width={14} height={14} />
+            </div>
+
             {t.disabled && (
               <Image
                 src={InfoIcon}
