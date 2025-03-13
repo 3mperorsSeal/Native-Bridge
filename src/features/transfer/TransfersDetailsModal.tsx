@@ -39,6 +39,7 @@ export function TransfersDetailsModal({
   const [fromUrl, setFromUrl] = useState<string>('');
   const [toUrl, setToUrl] = useState<string>('');
   const [originTxUrl, setOriginTxUrl] = useState<string>('');
+  const [dstTokenUrl, setDstTokenUrl] = useState<string>('');
 
   const {
     status,
@@ -48,6 +49,7 @@ export function TransfersDetailsModal({
     sender,
     recipient,
     originTokenAddressOrDenom,
+    destTokenAddressOrDenom,
     originTxHash,
     msgId,
     timestamp,
@@ -64,12 +66,14 @@ export function TransfersDetailsModal({
         const originTxUrl = multiProvider.tryGetExplorerTxUrl(origin, { hash: originTxHash });
         if (originTxUrl) setOriginTxUrl(fixDoubleSlash(originTxUrl));
       }
-      const [fromUrl, toUrl] = await Promise.all([
+      const [fromUrl, toUrl, dstTokenUrl] = await Promise.all([
         multiProvider.tryGetExplorerAddressUrl(origin, sender),
         multiProvider.tryGetExplorerAddressUrl(destination, recipient),
+        multiProvider.tryGetExplorerAddressUrl(destination, destTokenAddressOrDenom),
       ]);
       if (fromUrl) setFromUrl(fixDoubleSlash(fromUrl));
       if (toUrl) setToUrl(fixDoubleSlash(toUrl));
+      if(dstTokenUrl) setDstTokenUrl(dstTokenUrl);
     } catch (error) {
       logger.error('Error fetching URLs:', error);
     }
@@ -168,6 +172,7 @@ export function TransfersDetailsModal({
           {token?.addressOrDenom && (
             <TransferProperty name="Token Address or Denom" value={token.addressOrDenom} />
           )}
+          <TransferProperty name="Destination Token" value={destTokenAddressOrDenom || ""} url={dstTokenUrl} />
           {originTxHash && (
             <TransferProperty
               name="Origin Transaction Hash"

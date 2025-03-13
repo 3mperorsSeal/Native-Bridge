@@ -133,10 +133,12 @@ export function TokenList({
                 <span>{`Chain: ${getChainDisplayName(t.token.chainName)}`}</span>
               </div>
             </div>
+            {t.token.chainName === "pulsechain" ?
             <div className=" ml-5 justify-center text-xs flex space-x-1">
-              <CopyButton copyValue={t.token.addressOrDenom} width={14} height={14} />
-            </div>
-
+              <CopyButton copyValue={t.token.collateralAddressOrDenom || ""} width={14} height={14} />
+            </div> : <div className=" ml-5 justify-center text-xs flex space-x-1">
+              <CopyButton copyValue={t.token.addressOrDenom || ""} width={14} height={14} />
+            </div>}
             {t.disabled && (
               <Image
                 src={InfoIcon}
