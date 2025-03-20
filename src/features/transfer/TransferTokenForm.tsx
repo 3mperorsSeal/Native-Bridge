@@ -321,7 +321,7 @@ function SelfButton({ disabled }: { disabled?: boolean }) {
     if (address) setFieldValue('recipient', address);
     else
       toast.warn(
-        `No account found for for chain ${getChainDisplayName(
+        `No account found for chain ${getChainDisplayName(
           values.destination,
         )}, is your wallet connected?`,
       );
@@ -361,9 +361,8 @@ function ReviewDetails({ visible }: { visible: boolean }) {
 
   return (
     <div
-      className={`${
-        visible ? 'max-h-screen duration-1000 ease-in' : 'max-h-0 duration-500'
-      } overflow-hidden transition-all`}
+      className={`${visible ? 'max-h-screen duration-1000 ease-in' : 'max-h-0 duration-500'
+        } overflow-hidden transition-all`}
     >
       <label className="mt-4 block uppercase text-sm text-white pl-0.5">Transactions</label>
       <div className="mt-1.5 px-2.5 py-2 space-y-2 rounded border border-gray-400 text-sm break-all">
@@ -400,17 +399,15 @@ function ReviewDetails({ visible }: { visible: boolean }) {
                 {fees?.localQuote && fees.localQuote.amount > 0n && (
                   <p className="flex">
                     <span className="min-w-[7rem]">Local Gas (est.)</span>
-                    <span>{`${fees.localQuote.getDecimalFormattedAmount().toFixed(4) || '0'} ${
-                      fees.localQuote.token.symbol || ''
-                    }`}</span>
+                    <span>{`${fees.localQuote.getDecimalFormattedAmount().toFixed(4) || '0'} ${fees.localQuote.token.symbol || ''
+                      }`}</span>
                   </p>
                 )}
                 {fees?.interchainQuote && fees.interchainQuote.amount > 0n && (
                   <p className="flex">
                     <span className="min-w-[7rem]">Interchain Gas</span>
-                    <span>{`${fees.interchainQuote.getDecimalFormattedAmount().toFixed(4) || '0'} ${
-                      fees.interchainQuote.token.symbol || ''
-                    }`}</span>
+                    <span>{`${fees.interchainQuote.getDecimalFormattedAmount().toFixed(4) || '0'} ${fees.interchainQuote.token.symbol || ''
+                      }`}</span>
                   </p>
                 )}
               </div>
