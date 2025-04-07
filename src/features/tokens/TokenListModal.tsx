@@ -107,55 +107,54 @@ export function TokenList({
     <div className="flex flex-col items-stretch">
       {tokens.length ? (
         tokens.map((t, i) => (
-          <button
-            className={`-mx-2 py-2 px-2 rounded mb-2 flex items-center text-white ${
-              t.disabled ? 'opacity-50' : ''
-            } transition-all duration-250`}
-            key={i}
-            type="button"
-            disabled={t.disabled}
-            onClick={() => onSelect(t.token)}
-          >
-            <div className="shrink-0">
-              <TokenIcon token={t.token} size={30} />
-            </div>
-            <div className="ml-2 text-left shrink-0">
-              <div className="text-sm w-14 truncate">{t.token.symbol || 'Unknown'}</div>
-              <div className="text-xs text-gray-500 w-14 truncate">{t.token.name || 'Unknown'}</div>
-            </div>
-            <div className="ml-2 text-left shrink min-w-0">
-              <div className="text-xs w-full truncate">
-                {t.token.addressOrDenom || 'Native chain token'}
+          <div key={i} className="flex items-center">
+            <button
+              className={`-mx-2 py-2 px-2 rounded mb-2 flex items-center text-white ${t.disabled ? 'opacity-50' : ''
+                } transition-all duration-250`}
+              type="button"
+              disabled={t.disabled}
+              onClick={() => onSelect(t.token)}
+            >
+              <div className="shrink-0">
+                <TokenIcon token={t.token} size={30} />
               </div>
-              <div className=" mt-0.5 text-xs flex space-x-1">
-                <span>{`Decimals: ${t.token.decimals}`}</span>
-                <span>-</span>
-                <span>{`Chain: ${getChainDisplayName(t.token.chainName)}`}</span>
+              <div className="ml-2 text-left shrink-0">
+                <div className="text-sm w-14 truncate">{t.token.symbol || 'Unknown'}</div>
+                <div className="text-xs text-gray-500 w-14 truncate">{t.token.name || 'Unknown'}</div>
               </div>
-            </div>
-            {t.token.chainName === "pulsechain" ?
-            <div className=" ml-5 justify-center text-xs flex space-x-1">
-              <CopyButton copyValue={t.token.collateralAddressOrDenom || ""} width={14} height={14} />
-            </div> : <div className=" ml-5 justify-center text-xs flex space-x-1">
-              <CopyButton copyValue={t.token.addressOrDenom || ""} width={14} height={14} />
-            </div>}
-            {t.disabled && (
-              <Image
-                src={InfoIcon}
-                alt=""
-                className="ml-auto mr-1"
-                data-te-toggle="tooltip"
-                title={`Route not supported for ${getChainDisplayName(
-                  origin,
-                )} to ${getChainDisplayName(destination)}`}
+              <div className="ml-2 text-left shrink min-w-0">
+                <div className="text-xs w-full truncate">
+                  {t.token.chainName === 'pulsechain' ? t.token.collateralAddressOrDenom || '' : t.token.addressOrDenom || ''}
+                </div>
+                <div className="mt-0.5 text-xs flex space-x-1">
+                  <span>{`Decimals: ${t.token.decimals}`}</span>
+                  <span>-</span>
+                  <span>{`Chain: ${getChainDisplayName(t.token.chainName)}`}</span>
+                </div>
+              </div>
+              {t.disabled && (
+                <Image
+                  src={InfoIcon}
+                  alt=""
+                  className="ml-auto mr-1"
+                  data-te-toggle="tooltip"
+                  title={`Route not supported for ${getChainDisplayName(origin)} to ${getChainDisplayName(destination)}`}
+                />
+              )}
+            </button>
+            <div className="ml-auto flex items-center">
+              <CopyButton
+                copyValue={t.token.chainName === 'pulsechain' ? t.token.collateralAddressOrDenom || '' : t.token.addressOrDenom || ''}
+                width={14}
+                height={14}
               />
-            )}
-          </button>
+            </div>
+          </div>
         ))
       ) : (
         <div className="my-8 text-gray-500 text-center">
           <div>No tokens found</div>
-          <div className="mt-2 text-sm ">Try a different destination chain or search query</div>
+          <div className="mt-2 text-sm">Try a different destination chain or search query</div>
         </div>
       )}
     </div>
