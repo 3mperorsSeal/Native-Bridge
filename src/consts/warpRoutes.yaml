@@ -120,18 +120,18 @@ tokens:
   - chainName: base
     standard: EvmHypSynthetic
     decimals: 18
-    symbol: SAAVA
-    name: Content Reward Token
-    addressOrDenom: "0x18a02191a845ca7cbbdd6a3bb0cbfc12b6c68be5"
+    symbol: SAVVA
+    name: SAVVA from PulseChain
+    addressOrDenom: "0xDE0540B4359D74aF32e6BE86E4F8C9b14FBA2EE3"
     connections:
       - token: ethereum|pulsechain|0xD110Cbf543c3b237aB3EC171D7117932A4807F9B
   - chainName: pulsechain
     standard: EvmHypCollateral
     decimals: 18
-    symbol: SAAVA    
-    name: Content Reward Token
+    symbol: SAVVA    
+    name: SAVVA from PulseChain
     addressOrDenom: "0xD110Cbf543c3b237aB3EC171D7117932A4807F9B"
     collateralAddressOrDenom: "0xb528a9DB27A74dB802C74D0CCc40657efE5F0A45"
     connections:
-      - token: ethereum|base|0x18a02191a845ca7cbbdd6a3bb0cbfc12b6c68be5
+      - token: ethereum|base|0xDE0540B4359D74aF32e6BE86E4F8C9b14FBA2EE3
  
